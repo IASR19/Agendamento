@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento Thamires Manicure/Pedicure</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Add placeholders for potential CSS frameworks or libraries if needed -->
+</head>
+<body>
+    <header>
+        <h1>Agendamento Thamires</h1>
+        <nav>
+            <!-- Basic navigation can be added here if needed -->
+            <button id="show-client-view">Agendar Horário</button>
+            <button id="show-admin-view">Área Administrativa</button> <!-- Simple switch for now -->
+        </nav>
+    </header>
+
+    <main id="app-container">
+        <!-- Client View Section (Initially Visible) -->
+        <section id="client-view">
+            <h2>Agende seu Horário</h2>
+            
+            <div class="form-group">
+                <label for="service-select">Escolha o Serviço:</label>
+                <select id="service-select" name="service"></select>
+            </div>
+
+            <div class="form-group">
+                <label for="date-select">Escolha a Data:</label>
+                <input type="date" id="date-select" name="date">
+            </div>
+
+            <div class="form-group">
+                <label>Horários Disponíveis:</label>
+                <div id="available-slots-container">
+                    <!-- Available slots will be populated here -->
+                    <p>Selecione um serviço e uma data para ver os horários.</p>
+                </div>
+            </div>
+
+            <form id="booking-form" style="display: none;">
+                <h3>Confirmar Agendamento</h3>
+                <p>Serviço: <span id="confirm-service"></span></p>
+                <p>Data e Hora: <span id="confirm-datetime"></span></p>
+                <div class="form-group">
+                    <label for="client-name">Seu Nome:</label>
+                    <input type="text" id="client-name" name="client_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="client-phone">Seu Telefone (com DDD):</label>
+                    <input type="tel" id="client-phone" name="client_phone" required>
+                </div>
+                <button type="submit">Confirmar Agendamento</button>
+                <button type="button" id="cancel-booking">Cancelar</button>
+            </form>
+            <div id="booking-result"></div>
+        </section>
+
+        <!-- Admin View Section (Initially Hidden) -->
+        <section id="admin-view" style="display: none;">
+            <h2>Painel Administrativo</h2>
+            
+            <!-- Service Management -->
+            <section id="admin-services">
+                <h3>Gerenciar Serviços</h3>
+                <form id="service-form">
+                    <input type="hidden" id="service-id">
+                    <div class="form-group">
+                        <label for="service-name">Nome do Serviço:</label>
+                        <input type="text" id="service-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service-duration">Duração (minutos):</label>
+                        <input type="number" id="service-duration" required min="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="service-price">Preço (R$):</label>
+                        <input type="number" id="service-price" required min="0" step="0.01">
+                    </div>
+                    <button type="submit" id="save-service-btn">Salvar Serviço</button>
+                    <button type="button" id="clear-service-form-btn">Limpar Formulário</button>
+                </form>
+                <div id="service-list-container">
+                    <h4>Serviços Cadastrados</h4>
+                    <ul id="service-list"></ul>
+                </div>
+                 <div id="service-admin-result"></div>
+            </section>
+
+            <!-- Appointment List -->
+            <section id="admin-appointments">
+                <h3>Agendamentos Confirmados</h3>
+                <button id="refresh-appointments-btn">Atualizar Lista</button>
+                <ul id="appointment-list">
+                    <!-- Appointments will be listed here -->
+                </ul>
+                 <div id="appointment-admin-result"></div>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Thamires Manicure/Pedicure. Desenvolvido por Manus.</p>
+    </footer>
+
+    <script src="/static/js/app.js"></script>
+    <!-- Add placeholders for potential JS libraries if needed -->
+</body>
+</html>

@@ -1,0 +1,223 @@
+/* General Styles */
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #e83e8c; /* Pink tone */
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav button {
+    background-color: #fff;
+    color: #e83e8c;
+    border: 1px solid #e83e8c;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav button:hover {
+    background-color: #f8d7da; /* Lighter pink */
+    color: #721c24; /* Darker pink text */
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    font-size: 0.9em;
+    color: #666;
+}
+
+section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+h2, h3, h4 {
+    color: #d63384; /* Darker pink */
+    margin-bottom: 1rem;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+button {
+    background-color: #d63384;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #b02a6e; /* Darker shade on hover */
+}
+
+button[type="button"] {
+    background-color: #6c757d; /* Gray for cancel/clear */
+}
+
+button[type="button"]:hover {
+    background-color: #5a6268;
+}
+
+/* Available Slots */
+#available-slots-container {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    min-height: 50px;
+}
+
+.slot-button {
+    background-color: #28a745; /* Green */
+    color: white;
+    padding: 0.5rem 1rem;
+    margin: 0.25rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.slot-button:hover {
+    background-color: #218838;
+}
+
+/* Admin Lists */
+#service-list, #appointment-list {
+    list-style: none;
+    padding: 0;
+}
+
+#service-list li, #appointment-list li {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+#service-list li span, #appointment-list li span {
+    margin-right: 1rem; /* Add some space between elements */
+}
+
+.admin-actions button {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.9em;
+    margin-left: 0.5rem;
+}
+
+/* Result Messages */
+#booking-result, #service-admin-result, #appointment-admin-result {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 4px;
+    display: none; /* Hidden by default */
+}
+
+.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    main {
+        margin: 1rem;
+        padding: 0.5rem;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    nav button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9em;
+    }
+
+    button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9em;
+    }
+
+    #service-list li, #appointment-list li {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start;
+    }
+
+    .admin-actions {
+        margin-top: 0.5rem; /* Add space when stacked */
+        width: 100%;
+        text-align: right;
+    }
+
+    .admin-actions button {
+        margin-left: 0;
+        margin-right: 0.5rem; /* Adjust margin for right alignment */
+    }
+}
+
